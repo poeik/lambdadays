@@ -6,3 +6,7 @@ theme = 'hugo-book'
 [params]
   BookSection = 'content'
   BookSearch = false
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
