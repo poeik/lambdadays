@@ -11,7 +11,3 @@ theme = 'hugo-book'
   [caches.images]
     dir = ':cacheDir/images'
 
-[module]
-  mounts = [
-    { source = "content/attachments", target = "static/attachments" },
-  ]
