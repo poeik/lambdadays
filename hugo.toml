@@ -1,0 +1,8 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Lambda Days'
+theme = 'hugo-book'
+
+[params]
+  BookSection = 'content'
+  BookSearch = false

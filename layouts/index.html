@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="all-pages">
+  <h1>All Articles</h1>
+  <ul>
+    {{ range sort .Site.RegularPages "File.Path" }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
