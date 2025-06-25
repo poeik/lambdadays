@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="markdown book-post">
+  <h1>
+    {{ partial "docs/title.html" . }}
+  </h1>
+  {{ partial "docs/post-meta" . }}
+  <div class="book-post-content">
+    {{/* layouts/single.html */}}
+    {{ $raw := .RawContent                     }}
+    {{/* turn Obsidian-style ![[…]] into standard ![](/attachments/…) */}}
+    {{ $fixed := replaceRE `!\[\[(attachments/[^\]]+)\]\]` `![](/$1)` (printf "%s" $raw) }}
+    {{/* now render it as Markdown */}}
+    {{ $fixed | markdownify }}
+  </div>
+</article>
+{{ end }}
+
+{{ define "toc" }}
+  {{ partial "docs/toc" . }}
+{{ end }}
+
